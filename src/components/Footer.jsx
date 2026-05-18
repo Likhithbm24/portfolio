@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart, Code2, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,11 +51,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-gray-600">
+        <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-center text-xs text-gray-600">
           <p>© {new Date().getFullYear()} Likhith BM. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Built with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> using React & Vite
-          </p>
         </div>
       </div>
     </footer>
