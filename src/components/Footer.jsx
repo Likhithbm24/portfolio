@@ -25,7 +25,7 @@ export default function Footer() {
             {[
               { href: 'https://github.com/Likhithbm24', icon: Github, label: 'GitHub' },
               { href: 'https://linkedin.com/in/likhith-bm-687996250', icon: Linkedin, label: 'LinkedIn' },
-              { href: 'mailto:likhithbm04@gmail.com', icon: Mail, label: 'Email' },
+              { href: 'https://mail.google.com/mail/?view=cm&to=likhithbm04@gmail.com', icon: Mail, label: 'Email' },
             ].map(({ href, icon: Icon, label }) => (
               <a
                 key={label}

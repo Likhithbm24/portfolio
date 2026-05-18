@@ -12,7 +12,7 @@ const EMAILJS_PUBLIC_KEY  = 'IFAES9ILU0k1EecQZ';
 const socialLinks = [
   { icon: Github,   label: 'GitHub',    href: 'https://github.com/Likhithbm24',                  value: 'github.com/Likhithbm24',        color: 'hover:border-gray-400/50 hover:text-white' },
   { icon: Linkedin, label: 'LinkedIn',  href: 'https://linkedin.com/in/likhith-bm-687996250',     value: 'linkedin.com/in/likhith-bm',    color: 'hover:border-blue-400/50 hover:text-blue-400' },
-  { icon: Mail,     label: 'Email',     href: 'mailto:likhithbm04@gmail.com',                     value: 'likhithbm04@gmail.com',         color: 'hover:border-purple-400/50 hover:text-purple-400' },
+  { icon: Mail,     label: 'Email',     href: 'https://mail.google.com/mail/?view=cm&to=likhithbm04@gmail.com',  value: 'likhithbm04@gmail.com',         color: 'hover:border-purple-400/50 hover:text-purple-400' },
   { icon: Phone,    label: 'Phone',     href: 'tel:+918317421583',                                value: '+91 83174 21583',                color: 'hover:border-green-400/50 hover:text-green-400' },
 ];
 
@@ -198,7 +198,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
                   <AlertCircle className="w-4 h-4 flex-shrink-0" />
                   Oops! Something went wrong. Please email me directly at{' '}
-                  <a href="mailto:likhithbm04@gmail.com" className="underline">likhithbm04@gmail.com</a>
+                  <a href="https://mail.google.com/mail/?view=cm&to=likhithbm04@gmail.com" target="_blank" rel="noopener noreferrer" className="underline">likhithbm04@gmail.com</a>
                 </div>
               )}
 
