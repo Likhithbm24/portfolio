@@ -152,7 +152,8 @@ export default function Hero() {
               Get In Touch
             </a>
             <a
-              href="mailto:likhithbm04@gmail.com"
+              href="/Likhith_Resume.pdf"
+              download="Likhith_BM_Resume.pdf"
               className="px-7 py-3.5 rounded-full glass border border-white/10 text-gray-300 font-semibold text-sm hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300 flex items-center gap-2"
             >
               <Download className="w-4 h-4" /> Resume
