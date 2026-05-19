@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       <div className={`section-container flex items-center justify-between transition-all duration-300 ${
-        scrolled ? 'py-4' : 'py-6'
+        scrolled ? 'py-5' : 'py-7'
       }`}>
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 group">
