@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ArrowDown, Sparkles } from 'lucide-react';
 
 const roles = [
@@ -13,7 +13,6 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [deleting, setDeleting] = useState(false);
-  const canvasRef = useRef(null);
 
   // Typewriter effect
   useEffect(() => {
@@ -32,72 +31,10 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIdx]);
 
-  // Particle canvas — desktop only (too heavy for mobile)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    // Skip on mobile for smooth scrolling
-    if (window.innerWidth < 768) return;
 
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 0.5,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random() * 0.4 + 0.1,
-    }));
-
-    let animId;
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(167, 139, 250, ${p.opacity})`;
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      // Connecting lines — desktop only
-      particles.forEach((a, i) => {
-        particles.slice(i + 1).forEach(b => {
-          const dist = Math.hypot(a.x - b.x, a.y - b.y);
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - dist / 100)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        });
-      });
-      animId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    const onResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', onResize);
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', onResize);
-    };
-  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Particle canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       <div className="section-container relative z-10 pt-24 md:pt-32 pb-16 md:pb-20 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">

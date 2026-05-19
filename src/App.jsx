@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,6 +10,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+  const canvasRef = useRef(null);
+
   useEffect(() => {
     // Scroll reveal logic
     const revealElements = document.querySelectorAll('.reveal');
@@ -43,8 +45,75 @@ export default function App() {
     };
   }, []);
 
+  // Particle canvas spanning entire app
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    // Skip on mobile for smooth scrolling
+    if (window.innerWidth < 768) return;
+
+    const ctx = canvas.getContext('2d');
+    
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      // Use document height so it covers the whole scrolling page
+      canvas.height = window.innerHeight;
+    };
+    setCanvasSize();
+
+    const particles = Array.from({ length: 50 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.3 + 0.05,
+    }));
+
+    let animId;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        // Changed to white/slate to match the premium theme
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      // Connecting lines
+      particles.forEach((a, i) => {
+        particles.slice(i + 1).forEach(b => {
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - dist / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+      animId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    window.addEventListener('resize', setCanvasSize);
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener('resize', setCanvasSize);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#020617]">
+      {/* Global Particle Canvas */}
+      <canvas ref={canvasRef} className="fixed inset-0 z-0 pointer-events-none" />
+
       {/* Global subtle grid overlay */}
       <div className="fixed inset-0 z-0 opacity-20 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',
