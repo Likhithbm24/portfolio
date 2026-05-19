@@ -44,7 +44,13 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-[#020617]">
+      {/* Global subtle grid overlay */}
+      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none" style={{
+        backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }} />
+
       <div className="relative z-10">
         <Navbar />
         <Hero />

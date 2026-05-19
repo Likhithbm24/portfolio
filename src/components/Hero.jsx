@@ -95,15 +95,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#020617]">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Particle canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-
-      {/* Very subtle grid overlay instead of neon blobs */}
-      <div className="absolute inset-0 z-0 opacity-20" style={{
-        backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }} />
 
       <div className="section-container relative z-10 pt-24 md:pt-32 pb-16 md:pb-20 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
