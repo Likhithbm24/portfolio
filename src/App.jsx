@@ -49,19 +49,18 @@ export default function App() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    // Skip on mobile for smooth scrolling
-    if (window.innerWidth < 768) return;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 18 : 50;
 
     const ctx = canvas.getContext('2d');
     
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
-      // Use document height so it covers the whole scrolling page
       canvas.height = window.innerHeight;
     };
     setCanvasSize();
 
-    const particles = Array.from({ length: 50 }, () => ({
+    const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       r: Math.random() * 2 + 0.5,
