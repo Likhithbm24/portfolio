@@ -38,7 +38,9 @@ export default function Navbar() {
         scrolled ? 'bg-[#020617]/90 backdrop-blur-md shadow-lg border-b border-white/5' : 'bg-transparent'
       }`}
     >
-      <div className="section-container flex items-center justify-between py-4">
+      <div className={`section-container flex items-center justify-between transition-all duration-300 ${
+        scrolled ? 'py-4' : 'py-6'
+      }`}>
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 group">
           <div className="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
