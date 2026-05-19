@@ -56,7 +56,7 @@ export default function About() {
     <section id="about" ref={sectionRef} className="relative py-28 overflow-hidden">
       <div className="bg-blob w-72 h-72 bg-purple-700/10 top-0 right-0" />
 
-      <div className="section-container">
+      <div className="section-container reveal">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-16 reveal" style={{ '--delay': '0ms' }}>
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-purple-500/30">

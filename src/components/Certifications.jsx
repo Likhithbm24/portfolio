@@ -13,7 +13,7 @@ export default function Certifications() {
     <section id="certifications" className="relative py-28 overflow-hidden">
       <div className="bg-blob w-64 h-64 bg-amber-500/8 top-0 left-1/4" />
 
-      <div className="section-container">
+      <div className="section-container reveal">
         {/* Header */}
         <div className="flex items-center gap-4 mb-16">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/30">

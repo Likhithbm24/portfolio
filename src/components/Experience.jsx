@@ -5,7 +5,7 @@ export default function Experience() {
     <section id="experience" className="relative py-28 overflow-hidden">
       <div className="bg-blob w-64 h-64 bg-purple-600/10 top-10 right-0" />
 
-      <div className="section-container">
+      <div className="section-container reveal">
         {/* Header */}
         <div className="flex items-center gap-4 mb-16">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
@@ -90,7 +90,7 @@ export default function Experience() {
         </div>
 
         {/* Currently studying message */}
-        <div className="mt-8 max-w-4xl glass rounded-2xl p-6 border border-cyan-500/15 flex items-center gap-4">
+        <div className="mt-8 max-w-4xl glass rounded-2xl p-6 border border-cyan-500/15 flex items-center gap-4 card-hover">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/20">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>

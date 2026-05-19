@@ -24,7 +24,7 @@ export default function Skills() {
     <section id="skills" className="relative py-28 overflow-hidden">
       <div className="bg-blob w-80 h-80 bg-cyan-600/10 bottom-0 left-0" />
 
-      <div className="section-container">
+      <div className="section-container reveal">
         {/* Header */}
         <div className="flex items-center gap-4 mb-16">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">

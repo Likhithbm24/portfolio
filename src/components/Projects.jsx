@@ -66,7 +66,7 @@ export default function Projects() {
     <section id="projects" className="relative py-28 overflow-hidden">
       <div className="bg-blob w-72 h-72 bg-purple-600/10 bottom-0 right-0" />
 
-      <div className="section-container">
+      <div className="section-container reveal">
         {/* Header */}
         <div className="flex items-center gap-4 mb-10">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
@@ -178,7 +178,7 @@ export default function Projects() {
             href="https://github.com/Likhithbm24"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full glass border border-white/10 text-white font-semibold text-sm hover:border-purple-500/50 hover:bg-purple-500/5 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full glass border border-white/10 text-white font-semibold text-sm hover:border-purple-500/50 hover:bg-purple-500/5 transition-all duration-300 shimmer-btn"
           >
             <Github className="w-4 h-4" /> View All Projects on GitHub
           </a>
