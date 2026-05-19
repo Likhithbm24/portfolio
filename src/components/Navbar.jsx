@@ -35,16 +35,16 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass shadow-lg shadow-purple-900/20' : 'bg-transparent'
+        scrolled ? 'glass shadow-lg border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="section-container flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <Code2 className="w-5 h-5 text-white" />
+          <div className="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <Code2 className="w-5 h-5 text-slate-300" />
           </div>
-          <span className="font-bold text-lg tracking-tight gradient-text">Likhith BM</span>
+          <span className="font-bold text-lg tracking-tight text-white">Likhith BM</span>
         </a>
 
         {/* Desktop Links */}
@@ -55,8 +55,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 hover-underline ${
                   active === link.href.slice(1)
-                    ? 'text-purple-400 bg-purple-500/10'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    ? 'text-white bg-slate-800'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
                 {link.label}
@@ -68,14 +68,14 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/30"
+          className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full bg-white text-slate-900 text-sm font-bold hover:bg-slate-200 hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
         >
           Hire Me
         </a>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+          className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -97,8 +97,8 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   active === link.href.slice(1)
-                    ? 'text-purple-400 bg-purple-500/10'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    ? 'text-white bg-slate-800'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
                 {link.label}
@@ -109,7 +109,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="block text-center px-4 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-sm font-semibold"
+              className="block text-center px-4 py-2.5 rounded-full bg-white text-slate-900 text-sm font-bold shadow-lg"
             >
               Hire Me
             </a>
