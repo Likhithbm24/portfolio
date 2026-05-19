@@ -98,7 +98,8 @@ body {
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Skill pill */
@@ -222,7 +223,8 @@ body::before {
 /* Larger section padding on mobile */
 @media (max-width: 768px) {
   .section-container {
-    padding: 0 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   /* Disable card lift on touch devices — prevents layout shift on tap */
