@@ -55,8 +55,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 hover-underline ${
                   active === link.href.slice(1)
-                    ? 'text-white bg-slate-800'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    ? 'text-white'
+                    : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -97,8 +97,8 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   active === link.href.slice(1)
-                    ? 'text-white bg-slate-800'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    ? 'text-white bg-slate-800/50'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/30'
                 }`}
               >
                 {link.label}
