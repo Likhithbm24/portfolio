@@ -34,8 +34,13 @@ export default function Hero() {
 
 
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-12 flex flex-col justify-center overflow-hidden">
-      <div className="section-container relative z-10 w-full mt-8 md:mt-0">
+    <section id="home" className="relative min-h-screen flex flex-col">
+      {/* Spacer to guarantee navbar clearance, never shrinks below 112px (7rem) */}
+      <div className="h-28 md:h-32 flex-shrink-0"></div>
+      
+      {/* Main content, centered vertically in remaining space */}
+      <div className="flex-grow flex flex-col justify-center pb-12 w-full">
+        <div className="section-container relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
 
           {/* ── Photo – shows on MOBILE (top) and DESKTOP (right via order) ── */}
@@ -133,6 +138,7 @@ export default function Hero() {
           </div>
 
         </div>
+      </div>
       </div>
 
       {/* Scroll indicator */}
