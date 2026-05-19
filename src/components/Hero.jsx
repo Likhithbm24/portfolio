@@ -9,6 +9,14 @@ const roles = [
   'Software Engineer',
 ];
 
+const codeSnippets = [
+  { code: `def predict(data):\n  model = load_model()\n  return model.predict(data)`, top: '15%', left: '2%', delay: '0s', color: 'text-purple-500/20' },
+  { code: `const api = express();\napi.use(cors());\napi.listen(8080);`, top: '65%', left: '5%', delay: '2s', color: 'text-cyan-500/20' },
+  { code: `class Node {\n  int data;\n  Node next;\n}`, top: '25%', right: '3%', delay: '1s', color: 'text-emerald-500/20' },
+  { code: `SELECT * FROM users\nWHERE role = 'admin'\nORDER BY created_at;`, top: '75%', right: '5%', delay: '3s', color: 'text-rose-500/20' },
+  { code: `import numpy as np\nimport pandas as pd\ndf.dropna(inplace=True)`, top: '5%', left: '45%', delay: '4s', color: 'text-amber-500/20' }
+];
+
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
@@ -109,6 +117,32 @@ export default function Hero() {
         backgroundImage: 'linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
       }} />
+
+      {/* Floating Code Snippets Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-50 md:opacity-100">
+        {codeSnippets.map((snippet, i) => (
+          <pre
+            key={i}
+            className={`absolute font-mono text-[10px] md:text-sm font-bold leading-relaxed ${snippet.color} animate-float hidden sm:block`}
+            style={{ 
+              top: snippet.top, 
+              left: snippet.left, 
+              right: snippet.right,
+              animationDelay: snippet.delay,
+              transform: 'rotate(-5deg)',
+            }}
+          >
+            {snippet.code}
+          </pre>
+        ))}
+        {/* Mobile specific snippets (fewer, repositioned) */}
+        <pre className="absolute top-[10%] left-[5%] font-mono text-[8px] font-bold text-purple-500/20 animate-float sm:hidden" style={{ transform: 'rotate(-5deg)' }}>
+          {`def init():\n  pass`}
+        </pre>
+        <pre className="absolute top-[75%] right-[5%] font-mono text-[8px] font-bold text-cyan-500/20 animate-float sm:hidden" style={{ animationDelay: '2s', transform: 'rotate(-5deg)' }}>
+          {`const App = () => (\n  <Hero />\n)`}
+        </pre>
+      </div>
 
       <div className="section-container relative z-10 pt-24 md:pt-32 pb-16 md:pb-20 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
