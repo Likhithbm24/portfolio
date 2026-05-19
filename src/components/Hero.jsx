@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col">
       {/* Spacer to guarantee navbar clearance */}
-      <div className="h-20 md:h-24 flex-shrink-0"></div>
+      <div className="h-24 md:h-28 flex-shrink-0"></div>
       
       {/* Main content, centered vertically in remaining space */}
       <div className="flex-grow flex flex-col justify-center pb-12 w-full">
@@ -45,7 +45,7 @@ export default function Hero() {
 
           {/* ── Photo – shows on MOBILE (top) and DESKTOP (right via order) ── */}
           <div className="flex-shrink-0 order-first lg:order-last">
-            <div className="relative mx-auto w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60">
+            <div className="relative mx-auto w-36 h-36 md:w-52 md:h-52 lg:w-64 lg:h-64">
               {/* Classy monochrome border ring */}
               <div className="absolute inset-0 rounded-full border border-slate-700 p-[4px] shadow-2xl">
                 <div className="w-full h-full rounded-full bg-slate-900" />
@@ -67,30 +67,30 @@ export default function Hero() {
           {/* ── Left: Text content ── */}
           <div className="max-w-2xl text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm font-medium mb-3 md:mb-4 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm font-medium mb-4 md:mb-6 animate-fade-in-up">
               <Sparkles className="w-4 h-4 text-slate-400" />
               <span>Open to Opportunities · Bengaluru, India</span>
             </div>
 
             {/* Name */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-4 leading-tight tracking-tight text-white animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-3 md:mb-5 leading-tight tracking-tight text-white animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               Building <span className="text-slate-400 font-medium italic">scalable</span> solutions.
             </h1>
 
             {/* Typewriter */}
-            <div className="flex items-center gap-2 h-10 md:h-12 mb-3 md:mb-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+            <div className="flex items-center gap-2 h-10 md:h-12 mb-4 md:mb-6 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '150ms' }}>
               <span className="text-xl md:text-3xl font-semibold text-slate-300">{displayed}</span>
               <span className="text-2xl text-slate-500 cursor-blink">|</span>
             </div>
 
             {/* Summary */}
-            <p className="text-slate-400 text-sm md:text-base max-w-xl mb-4 md:mb-6 leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-slate-400 text-base md:text-lg max-w-2xl mb-5 md:mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               Hi, I'm <strong className="text-white font-semibold">Likhith BM</strong>, a detail-oriented software engineer and full stack developer specializing in 
               <span className="text-white font-medium"> Python</span>, modern web frameworks, and data structures. Eager to contribute to impactful projects.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-3 mb-6 md:mb-8 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            <div className="flex flex-wrap gap-3 mb-6 md:mb-10 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '300ms' }}>
               <a
                 href="#projects"
                 className="px-8 py-3.5 rounded-full bg-white text-slate-900 font-bold text-sm hover:bg-slate-200 hover:-translate-y-1 transition-all duration-300 shadow-lg"
