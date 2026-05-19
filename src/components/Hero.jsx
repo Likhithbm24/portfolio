@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
 
-      <div className="section-container relative z-10 pt-28 lg:pt-0 pb-12 lg:pb-0 w-full">
+      <div className="section-container relative z-10 pt-32 pb-16 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
 
           {/* ── Photo – shows on MOBILE (top) and DESKTOP (right via order) ── */}
