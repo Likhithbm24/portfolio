@@ -220,3 +220,48 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
+
+/* ── Mobile Polish ────────────────────────────────── */
+
+/* Larger section padding on mobile */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1.25rem;
+  }
+
+  /* Disable card lift on touch devices — prevents layout shift on tap */
+  .card-hover:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+  }
+
+  /* Skill pills — slightly bigger touch target */
+  .skill-pill {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  /* Reduce section vertical padding on mobile */
+  section.py-28 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Premium text selection color */
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+  color: #fff;
+}
+
+/* Prevent text overflow on small screens */
+h1, h2, h3 {
+  word-break: break-word;
+}
+
+/* Smooth image rendering */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  image-rendering: high-quality;
+}

@@ -106,12 +106,12 @@ export default function Hero() {
         backgroundSize: '60px 60px'
       }} />
 
-      <div className="section-container relative z-10 pt-32 pb-20 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="section-container relative z-10 pt-24 md:pt-32 pb-16 md:pb-20 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
 
           {/* ── Photo – shows on MOBILE (top) and DESKTOP (right via order) ── */}
           <div className="flex-shrink-0 order-first lg:order-last">
-            <div className="relative mx-auto w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72">
+            <div className="relative mx-auto w-36 h-36 md:w-52 md:h-52 lg:w-72 lg:h-72">
               {/* Spinning gradient ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 via-cyan-400 to-purple-600 animate-spin-slow p-[3px]">
                 <div className="w-full h-full rounded-full bg-[#0a0a0f]" />
@@ -126,7 +126,7 @@ export default function Hero() {
                 className="absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full object-cover object-top"
               />
               {/* Online badge */}
-              <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-[#0a0a0f]/90 border border-white/10 rounded-full px-3 py-1 backdrop-blur-sm">
+              <div className="absolute bottom-1 right-1 md:bottom-3 md:right-3 flex items-center gap-1.5 bg-[#0a0a0f]/90 border border-white/10 rounded-full px-2.5 py-1 md:px-3 md:py-1 backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-[10px] text-green-400 font-semibold tracking-wide">Available</span>
               </div>
@@ -136,27 +136,27 @@ export default function Hero() {
           {/* ── Left: Text content ── */}
           <div className="max-w-2xl text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-purple-500/30 text-purple-300 text-sm font-medium mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-purple-500/30 text-purple-300 text-sm font-medium mb-5 md:mb-8 animate-fade-in-up">
               <Sparkles className="w-4 h-4 text-yellow-400" />
               <span>Open to Opportunities · Bengaluru, India</span>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             </div>
 
             {/* Name */}
-            <h1 className="text-6xl md:text-8xl font-black mb-4 leading-none tracking-tight">
+            <h1 className="text-5xl md:text-8xl font-black mb-3 md:mb-4 leading-none tracking-tight">
               <span className="text-white">Likhith</span>
               <br />
               <span className="gradient-text">BM</span>
             </h1>
 
             {/* Typewriter */}
-            <div className="flex items-center gap-2 h-12 mb-8 justify-center lg:justify-start">
-              <span className="text-2xl md:text-3xl font-semibold text-gray-300">{displayed}</span>
+            <div className="flex items-center gap-2 h-10 md:h-12 mb-5 md:mb-8 justify-center lg:justify-start">
+              <span className="text-xl md:text-3xl font-semibold text-gray-300">{displayed}</span>
               <span className="text-2xl text-purple-400 cursor-blink">|</span>
             </div>
 
             {/* Summary */}
-            <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mb-7 md:mb-10 leading-relaxed">
               Enthusiastic and detail-oriented individual with a strong foundation in{' '}
               <span className="text-purple-300 font-medium">Python</span>,{' '}
               <span className="text-cyan-300 font-medium">web development</span>, data analysis and DSA algorithms.
@@ -164,7 +164,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-14 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-3 mb-8 md:mb-14 justify-center lg:justify-start">
               <a
                 href="#projects"
                 className="px-7 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold text-sm hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/40 animate-pulse-glow"
