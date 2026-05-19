@@ -4,7 +4,7 @@ export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="relative border-t border-white/5 py-12 overflow-hidden">
+    <footer className="relative border-t border-white/5 pt-12 pb-6 overflow-hidden">
       <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo + tagline */}
