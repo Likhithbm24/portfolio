@@ -1,8 +1,36 @@
 import { useEffect, useRef, useState } from 'react';
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ArrowDown, Sparkles } from 'lucide-react';
 
+const roles = [
+  'Full Stack Developer',
+  'Python Developer',
+  'Machine Learning Enthusiast',
+  'Problem Solver',
+  'Software Engineer',
+];
+
 export default function Hero() {
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [deleting, setDeleting] = useState(false);
   const canvasRef = useRef(null);
+
+  // Typewriter effect
+  useEffect(() => {
+    const current = roles[roleIdx];
+    let timeout;
+    if (!deleting && displayed.length < current.length) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
+    } else if (!deleting && displayed.length === current.length) {
+      timeout = setTimeout(() => setDeleting(true), 2000);
+    } else if (deleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 45);
+    } else if (deleting && displayed.length === 0) {
+      setDeleting(false);
+      setRoleIdx((prev) => (prev + 1) % roles.length);
+    }
+    return () => clearTimeout(timeout);
+  }, [displayed, deleting, roleIdx]);
 
   // Particle canvas — desktop only (too heavy for mobile)
   useEffect(() => {
@@ -110,9 +138,15 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl md:text-8xl font-extrabold mb-6 md:mb-8 leading-tight tracking-tight text-white animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-5xl md:text-8xl font-extrabold mb-4 md:mb-6 leading-tight tracking-tight text-white animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               Building <span className="text-slate-400 font-medium italic">scalable</span> solutions.
             </h1>
+
+            {/* Typewriter */}
+            <div className="flex items-center gap-2 h-10 md:h-12 mb-5 md:mb-8 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+              <span className="text-xl md:text-3xl font-semibold text-slate-300">{displayed}</span>
+              <span className="text-2xl text-slate-500 cursor-blink">|</span>
+            </div>
 
             {/* Summary */}
             <p className="text-slate-400 text-base md:text-lg max-w-2xl mb-7 md:mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
@@ -137,9 +171,9 @@ export default function Hero() {
               <a
                 href="/Likhith_Resume.pdf"
                 download="Likhith_BM_Resume.pdf"
-                className="px-6 py-3.5 rounded-full border border-slate-800 text-slate-400 font-medium text-sm hover:text-white transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-full border border-slate-800 text-slate-400 font-medium text-sm hover:text-white hover:bg-slate-800 transition-all duration-300 flex items-center gap-2"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4" /> Resume
               </a>
             </div>
 

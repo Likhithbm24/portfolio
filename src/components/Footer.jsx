@@ -5,14 +5,12 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-white/5 py-12 overflow-hidden">
-      <div className="bg-blob w-64 h-64 bg-purple-800/10 bottom-0 left-1/2 -translate-x-1/2" />
-
       <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo + tagline */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center shadow-lg">
-              <Code2 className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shadow-lg">
+              <Code2 className="w-5 h-5 text-slate-300" />
             </div>
             <div>
               <p className="font-bold text-white">Likhith BM</p>
@@ -33,7 +31,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-9 h-9 rounded-lg glass border border-white/8 flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/40 hover:scale-110 transition-all duration-300"
+                className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 hover:bg-slate-800 hover:scale-110 transition-all duration-300"
               >
                 <Icon className="w-4 h-4" />
               </a>
@@ -44,7 +42,7 @@ export default function Footer() {
           <button
             onClick={scrollTop}
             aria-label="Back to top"
-            className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white hover:scale-110 hover:opacity-90 transition-all duration-300 shadow-lg shadow-purple-500/30"
+            className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:scale-110 transition-all duration-300 shadow-lg"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
