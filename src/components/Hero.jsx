@@ -32,21 +32,24 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIdx]);
 
-  // Particle canvas
+  // Particle canvas — desktop only (too heavy for mobile)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // Skip on mobile for smooth scrolling
+    if (window.innerWidth < 768) return;
+
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles = Array.from({ length: 80 }, () => ({
+    const particles = Array.from({ length: 50 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       r: Math.random() * 2 + 0.5,
-      dx: (Math.random() - 0.5) * 0.4,
-      dy: (Math.random() - 0.5) * 0.4,
-      opacity: Math.random() * 0.5 + 0.1,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.4 + 0.1,
     }));
 
     let animId;
@@ -62,14 +65,15 @@ export default function Hero() {
         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
       });
+      // Connecting lines — desktop only
       particles.forEach((a, i) => {
         particles.slice(i + 1).forEach(b => {
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
-          if (dist < 120) {
+          if (dist < 100) {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.15 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - dist / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -205,7 +209,7 @@ export default function Hero() {
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
-              <div className="flex items-center gap-2 ml-2 text-sm text-gray-500">
+              <div className="flex items-center gap-2 ml-2 text-sm text-gray-500 hidden md:flex">
                 <MapPin className="w-4 h-4 text-purple-400" />
                 Bengaluru, India
               </div>
@@ -215,10 +219,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — hidden on mobile to avoid overlap */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-gray-500 hover:text-purple-400 transition-colors animate-float"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-gray-500 hover:text-purple-400 transition-colors animate-float"
       >
         <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
         <ArrowDown className="w-4 h-4" />
