@@ -1,51 +1,11 @@
-import { Award, Calendar } from 'lucide-react';
+import { Award, Calendar, Code2, Globe, Layers, ShieldCheck, BarChart3, Sparkles, Trophy } from 'lucide-react';
 
 const certifications = [
-  {
-    title: 'Certificate of Excellence in Python Programming',
-    issuer: 'WhiteHat Jr',
-    date: 'Dec 2022',
-    emoji: '🐍',
-    color: 'from-yellow-500 to-amber-600',
-    glow: 'shadow-yellow-500/20',
-    badge: 'bg-yellow-500/10 border-yellow-500/25 text-yellow-400',
-  },
-  {
-    title: 'Web Applications Development',
-    issuer: 'Skill Development Program',
-    date: 'Feb 2023',
-    emoji: '🌐',
-    color: 'from-blue-500 to-cyan-600',
-    glow: 'shadow-blue-500/20',
-    badge: 'bg-blue-500/10 border-blue-500/25 text-blue-400',
-  },
-  {
-    title: 'Full Stack Development using Python',
-    issuer: 'Skill Development Program',
-    date: 'June 2023',
-    emoji: '⚡',
-    color: 'from-purple-500 to-violet-600',
-    glow: 'shadow-purple-500/20',
-    badge: 'bg-purple-500/10 border-purple-500/25 text-purple-400',
-  },
-  {
-    title: 'Introduction to Cybersecurity',
-    issuer: 'Cisco Networking Academy',
-    date: 'Feb 2025',
-    emoji: '🔐',
-    color: 'from-emerald-500 to-teal-600',
-    glow: 'shadow-emerald-500/20',
-    badge: 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
-  },
-  {
-    title: 'Data Analytics Job Simulation',
-    issuer: 'Deloitte',
-    date: 'May 2025',
-    emoji: '📊',
-    color: 'from-rose-500 to-pink-600',
-    glow: 'shadow-rose-500/20',
-    badge: 'bg-rose-500/10 border-rose-500/25 text-rose-400',
-  },
+  { title: 'Certificate of Excellence in Python Programming', issuer: 'WhiteHat Jr',             date: 'Dec 2022',  Icon: Code2,      color: 'from-yellow-500 to-amber-600',  glow: 'shadow-yellow-500/20',  badge: 'bg-yellow-500/10 border-yellow-500/25 text-yellow-400'  },
+  { title: 'Web Applications Development',                   issuer: 'Skill Development Program', date: 'Feb 2023',  Icon: Globe,      color: 'from-blue-500 to-cyan-600',     glow: 'shadow-blue-500/20',    badge: 'bg-blue-500/10 border-blue-500/25 text-blue-400'        },
+  { title: 'Full Stack Development using Python',            issuer: 'Skill Development Program', date: 'June 2023', Icon: Layers,     color: 'from-purple-500 to-violet-600', glow: 'shadow-purple-500/20',  badge: 'bg-purple-500/10 border-purple-500/25 text-purple-400'  },
+  { title: 'Introduction to Cybersecurity',                  issuer: 'Cisco Networking Academy', date: 'Feb 2025',  Icon: ShieldCheck,color: 'from-emerald-500 to-teal-600',  glow: 'shadow-emerald-500/20', badge: 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400'},
+  { title: 'Data Analytics Job Simulation',                  issuer: 'Deloitte',                 date: 'May 2025',  Icon: BarChart3,  color: 'from-rose-500 to-pink-600',     glow: 'shadow-rose-500/20',    badge: 'bg-rose-500/10 border-rose-500/25 text-rose-400'        },
 ];
 
 export default function Certifications() {
@@ -74,8 +34,8 @@ export default function Certifications() {
               className="glass rounded-2xl p-6 border border-white/5 card-hover group flex gap-4 items-start"
             >
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center text-xl shadow-lg ${cert.glow} flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                {cert.emoji}
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center shadow-lg ${cert.glow} flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                <cert.Icon className="w-6 h-6 text-white" />
               </div>
 
               {/* Content */}
@@ -93,8 +53,10 @@ export default function Certifications() {
           ))}
 
           {/* Placeholder – more coming */}
-          <div className="glass rounded-2xl p-6 border border-dashed border-white/10 flex flex-col items-center justify-center text-center gap-2 min-h-28">
-            <div className="text-3xl">🔮</div>
+          <div className="glass rounded-2xl p-6 border border-dashed border-white/10 flex flex-col items-center justify-center text-center gap-3 min-h-28">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-slate-300" />
+            </div>
             <p className="text-gray-500 text-xs font-medium">More certifications coming soon...</p>
           </div>
         </div>
@@ -102,8 +64,8 @@ export default function Certifications() {
         {/* Summary Banner */}
         <div className="mt-12 glass rounded-2xl p-6 border border-amber-500/15 flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl shadow-lg shadow-amber-500/20">
-              🏆
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
+              <Trophy className="w-6 h-6 text-white" />
             </div>
             <div>
               <p className="text-white font-bold text-lg">5+ Industry Certifications</p>

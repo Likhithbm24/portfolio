@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { GraduationCap, Calendar, Star, Award, User } from 'lucide-react';
+import { GraduationCap, Calendar, Star, Award, User, BookOpen, School, Shield, Trophy } from 'lucide-react';
 
 const education = [
   {
@@ -7,27 +7,30 @@ const education = [
     institution: 'REVA University, Bengaluru',
     period: '2022 – Present',
     grade: 'CGPA: 8.5',
-    icon: '🎓',
+    Icon: GraduationCap,
+    color: 'from-purple-600 to-cyan-500',
   },
   {
     degree: '12th PUC – Physics, Chemistry, Mathematics, Computer Science',
     institution: 'Sri Vidya Mandir Independent PU College, Bengaluru',
     period: '2020 – 2022',
     grade: 'CGPA: 6.8',
-    icon: '📚',
+    Icon: BookOpen,
+    color: 'from-blue-600 to-indigo-600',
   },
   {
     degree: '10th Standard SSLC',
     institution: 'Sri Vidya Mandir Education Society, Bengaluru',
     period: '2019 – 2020',
     grade: 'CGPA: 9.5',
-    icon: '🏫',
+    Icon: School,
+    color: 'from-emerald-500 to-teal-600',
   },
 ];
 
 const achievements = [
-  { icon: '🥋', text: 'Represented at Open National Level in Taekwondo', sub: 'Discipline, Agility & Competitive Spirit' },
-  { icon: '🏀', text: 'Played Basketball at District Level', sub: 'Teamwork, Leadership & Athleticism' },
+  { Icon: Shield, color: 'from-orange-500 to-red-600', text: 'Represented at Open National Level in Taekwondo', sub: 'Discipline, Agility & Competitive Spirit' },
+  { Icon: Trophy, color: 'from-cyan-500 to-blue-600', text: 'Played Basketball at District Level', sub: 'Teamwork, Leadership & Athleticism' },
 ];
 
 function useIntersectionObserver(ref, options) {
@@ -95,8 +98,10 @@ export default function About() {
               </h3>
               <div className="space-y-4">
                 {achievements.map((a, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/3 border border-white/5 hover:border-purple-500/30 transition-all duration-300">
-                    <span className="text-2xl">{a.icon}</span>
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/3 border border-white/5 hover:border-purple-500/30 transition-all duration-300 group">
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${a.color} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <a.Icon className="w-5 h-5 text-white" />
+                    </div>
                     <div>
                       <p className="text-white font-semibold text-sm">{a.text}</p>
                       <p className="text-gray-500 text-xs mt-1">{a.sub}</p>
@@ -121,8 +126,8 @@ export default function About() {
                   <div key={i} className="relative flex gap-6">
                     {/* Timeline dot */}
                     <div className="relative flex-shrink-0">
-                      <div className="timeline-dot w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-lg shadow-lg shadow-purple-500/20 z-10">
-                        {edu.icon}
+                      <div className={`timeline-dot w-12 h-12 rounded-xl bg-gradient-to-br ${edu.color} flex items-center justify-center shadow-lg shadow-purple-500/20 z-10`}>
+                        <edu.Icon className="w-6 h-6 text-white" />
                       </div>
                     </div>
 

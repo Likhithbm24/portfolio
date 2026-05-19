@@ -1,49 +1,13 @@
 import { useRef } from 'react';
-import { Code, Zap } from 'lucide-react';
+import { Code, Terminal, Globe, Database, Lightbulb, GitBranch, Wrench, Rocket, Award, Star, Briefcase, Zap } from 'lucide-react';
 
 const skillCategories = [
-  {
-    title: 'Programming Languages',
-    emoji: '💻',
-    color: 'from-purple-600 to-violet-700',
-    glow: 'shadow-purple-500/20',
-    skills: ['Python', 'Java', 'C', 'C++'],
-  },
-  {
-    title: 'Web Technologies',
-    emoji: '🌐',
-    color: 'from-cyan-600 to-blue-600',
-    glow: 'shadow-cyan-500/20',
-    skills: ['HTML', 'CSS', 'JavaScript', 'ReactJS'],
-  },
-  {
-    title: 'Database Management',
-    emoji: '🗄️',
-    color: 'from-emerald-600 to-teal-700',
-    glow: 'shadow-emerald-500/20',
-    skills: ['MySQL', 'MongoDB'],
-  },
-  {
-    title: 'Soft Skills',
-    emoji: '🧠',
-    color: 'from-pink-600 to-rose-600',
-    glow: 'shadow-pink-500/20',
-    skills: ['Debugging', 'Problem Solving', 'Communication', 'Team Collaboration'],
-  },
-  {
-    title: 'Dev Practices',
-    emoji: '⚙️',
-    color: 'from-amber-600 to-orange-600',
-    glow: 'shadow-amber-500/20',
-    skills: ['Scrum', 'SDLC', 'Agile', 'REST APIs'],
-  },
-  {
-    title: 'Tools & IDEs',
-    emoji: '🛠️',
-    color: 'from-indigo-600 to-purple-600',
-    glow: 'shadow-indigo-500/20',
-    skills: ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Android Studio', 'Firebase'],
-  },
+  { title: 'Programming Languages', Icon: Terminal, color: 'from-purple-600 to-violet-700', glow: 'shadow-purple-500/20', skills: ['Python', 'Java', 'C', 'C++'] },
+  { title: 'Web Technologies',       Icon: Globe,    color: 'from-cyan-600 to-blue-600',   glow: 'shadow-cyan-500/20',   skills: ['HTML', 'CSS', 'JavaScript', 'ReactJS'] },
+  { title: 'Database Management',    Icon: Database, color: 'from-emerald-600 to-teal-700',glow: 'shadow-emerald-500/20',skills: ['MySQL', 'MongoDB'] },
+  { title: 'Soft Skills',            Icon: Lightbulb,color: 'from-pink-600 to-rose-600',   glow: 'shadow-pink-500/20',   skills: ['Debugging', 'Problem Solving', 'Communication', 'Team Collaboration'] },
+  { title: 'Dev Practices',          Icon: GitBranch,color: 'from-amber-600 to-orange-600',glow: 'shadow-amber-500/20',  skills: ['Scrum', 'SDLC', 'Agile', 'REST APIs'] },
+  { title: 'Tools & IDEs',           Icon: Wrench,   color: 'from-indigo-600 to-purple-600',glow:'shadow-indigo-500/20', skills: ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Android Studio', 'Firebase'] },
 ];
 
 const pillColors = [
@@ -82,8 +46,8 @@ export default function Skills() {
             >
               {/* Card Header */}
               <div className="flex items-center gap-3 mb-5">
-                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-lg shadow-lg ${cat.glow} group-hover:scale-110 transition-transform duration-300`}>
-                  {cat.emoji}
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center shadow-lg ${cat.glow} group-hover:scale-110 transition-transform duration-300`}>
+                  <cat.Icon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="font-bold text-white text-sm">{cat.title}</h3>
               </div>
@@ -106,13 +70,15 @@ export default function Skills() {
         {/* Quick Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { num: '3+', label: 'Projects Built', icon: '🚀' },
-            { num: '5+', label: 'Certifications', icon: '🏆' },
-            { num: '8.5', label: 'CGPA (B.Tech)', icon: '⭐' },
-            { num: '5mo', label: 'Internship', icon: '💼' },
+            { num: '3+',  label: 'Projects Built', Icon: Rocket,   color: 'from-purple-600 to-violet-700' },
+            { num: '5+',  label: 'Certifications', Icon: Award,    color: 'from-amber-500 to-orange-600'  },
+            { num: '8.5', label: 'CGPA (B.Tech)',  Icon: Star,     color: 'from-cyan-500 to-blue-600'     },
+            { num: '5mo', label: 'Internship',     Icon: Briefcase,color: 'from-emerald-500 to-teal-600'  },
           ].map((stat, i) => (
-            <div key={i} className="glass rounded-2xl p-6 border border-white/5 text-center card-hover">
-              <div className="text-3xl mb-2">{stat.icon}</div>
+            <div key={i} className="glass rounded-2xl p-6 border border-white/5 text-center card-hover group">
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                <stat.Icon className="w-6 h-6 text-white" />
+              </div>
               <div className="text-3xl font-black gradient-text mb-1">{stat.num}</div>
               <div className="text-xs text-gray-500 font-medium">{stat.label}</div>
             </div>

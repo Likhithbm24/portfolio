@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, ChevronRight, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, ChevronRight, MapPin, Building2, GraduationCap, CheckCircle } from 'lucide-react';
 
 export default function Experience() {
   return (
@@ -28,8 +28,8 @@ export default function Experience() {
             <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
               <div className="flex items-center gap-4">
                 {/* Company logo placeholder */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-2xl shadow-xl shadow-purple-500/30 animate-float">
-                  💼
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center shadow-xl shadow-purple-500/30 animate-float">
+                  <Building2 className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Software Engineering Intern</h3>
@@ -46,8 +46,8 @@ export default function Experience() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <span className="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold">
-                  ✅ Completed
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold">
+                  <CheckCircle className="w-3.5 h-3.5" /> Completed
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-300 text-xs font-medium text-center">
                   Full Stack Dev
@@ -91,8 +91,8 @@ export default function Experience() {
 
         {/* Currently studying message */}
         <div className="mt-8 max-w-4xl glass rounded-2xl p-6 border border-cyan-500/15 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl flex-shrink-0">
-            🎓
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/20">
+            <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <div>
             <p className="text-white font-semibold">Currently Pursuing B.Tech – REVA University</p>
