@@ -13,6 +13,7 @@ const socialLinks = [
   { icon: Github,   label: 'GitHub',    href: 'https://github.com/Likhithbm24',                  value: 'github.com/Likhithbm24',        color: 'hover:border-slate-500 hover:text-white hover:bg-slate-800' },
   { icon: Linkedin, label: 'LinkedIn',  href: 'https://linkedin.com/in/likhith-bm-687996250',     value: 'linkedin.com/in/likhith-bm',    color: 'hover:border-slate-500 hover:text-white hover:bg-slate-800' },
   { icon: Mail,     label: 'Email',     href: 'https://mail.google.com/mail/?view=cm&to=likhithbm04@gmail.com',  value: 'likhithbm04@gmail.com',         color: 'hover:border-slate-500 hover:text-white hover:bg-slate-800' },
+  { icon: Phone,    label: 'Phone',     href: 'tel:+918317421583',                               value: '+91 8317421583',                color: 'hover:border-slate-500 hover:text-white hover:bg-slate-800' },
 ];
 
 const STATUS = { IDLE: 'idle', SENDING: 'sending', SUCCESS: 'success', ERROR: 'error' };
