@@ -34,9 +34,8 @@ export default function Hero() {
 
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
-
-      <div className="section-container relative z-10 pt-32 md:pt-44 pb-16 w-full">
+    <section id="home" className="relative min-h-screen pt-28 pb-12 flex flex-col justify-center overflow-hidden">
+      <div className="section-container relative z-10 w-full mt-8 md:mt-0">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
 
           {/* ── Photo – shows on MOBILE (top) and DESKTOP (right via order) ── */}
